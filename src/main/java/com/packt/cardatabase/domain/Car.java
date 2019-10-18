@@ -1,7 +1,6 @@
 package com.packt.cardatabase.domain;
 
 
-
 import javax.persistence.*;
 
 @Entity
@@ -15,8 +14,11 @@ public class Car {
     private String registerNumber;
     private int year;
     private int price;
-    public Car(){}
-    public Car(String brand,String model,String color,String registerNumber, int year,int price,Owner owner){
+
+    public Car() {
+    }
+
+    public Car(String brand, String model, String color, String registerNumber, int year, int price, Owner owner) {
         super();
         this.brand = brand;
         this.model = model;

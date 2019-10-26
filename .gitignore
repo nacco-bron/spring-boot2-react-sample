@@ -32,3 +32,4 @@ build/
 
 ### custom ###
 .mvn
+h2db/

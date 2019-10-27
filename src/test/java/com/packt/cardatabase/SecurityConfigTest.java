@@ -21,20 +21,19 @@ public class SecurityConfigTest {
 
     @Test
     public void ログインに成功すると200を返す() throws Exception {
-        // Testing authentication with correct credentials
-        this.mockMvc.perform(post("/login")
-                .content("{\"username\":\"user\", \"password\":\"password\"}"))
-                .andDo(print()).andExpect(status().isOk()
-        );
+        String uri = "/login";
+        String body = "{\"username\":\"user\", \"password\":\"password\"}";
+        mockMvc.perform(post(uri).content(body))
+                .andDo(print())
+                .andExpect(status().isOk());
     }
 
     @Test
     public void ログインに失敗すると403を返す() throws Exception {
-        // Testing authentication with wrong credentials
-        this.mockMvc.perform(post("/login")
-                .content("{\"username\":\"user\",\"password\":\"wrongpwd\"}"))
+         String uri = "/login";
+         String body = "{\"username\":\"user\", \"password\":\"wrongpwd\"}";
+         mockMvc.perform(post(uri).content(body))
                 .andDo(print())
-                .andExpect(status().is4xxClientError()
-                );
+                .andExpect(status().isUnauthorized());
     }
 }

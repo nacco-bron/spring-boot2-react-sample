@@ -6,5 +6,3 @@
 
 若干アレンジを加えている箇所があります。
 
-## Author
-Nacco([@climbing_nacco](https://twitter.com/climbing_nacco))
